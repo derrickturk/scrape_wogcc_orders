@@ -1,0 +1,11 @@
+bits & bobs on OCR
+
+pdfimages is fine for extracting scanned pages
+  applications all(?) need 270 degree rotation; use
+    pamflip -r270 xxx.ppm >xxx_rot.ppm
+  pamflip is from GnuWin32 netpbm
+  exhibits seem not to need rotation
+
+use tesseract to process pages: can we detect when we need to rotate
+  based on dictionary word count?
+  we can also try different segmentation modes (e.g. sparse text)

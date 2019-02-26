@@ -105,7 +105,7 @@ def orders(session, field, year):
             print(f'failure parsing result page (see contents.log):\n{e}',
                     file=stderr)
             if EVIL_BLOCKER_SIG in res.content:
-                print(f'F5 anti-scraping block page likely encountered; '
+                print('F5 anti-scraping block page likely encountered; '
                         'consider waiting a bit and trying again',
                         file=stderr)
             with open('contents.log', 'wb') as f:
@@ -164,7 +164,7 @@ def order_card(session, search_result, referer):
         print(f'failure parsing cardfile page (see contents.log):\n{e}',
                 file=stderr)
         if EVIL_BLOCKER_SIG in res.content:
-            print(f'F5 anti-scraping block page likely encountered; '
+            print('F5 anti-scraping block page likely encountered; '
                     'consider waiting a bit and trying again',
                     file=stderr)
         with open('contents.log', 'wb') as f:

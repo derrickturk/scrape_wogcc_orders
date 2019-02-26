@@ -32,3 +32,8 @@ try:
 they use F5 Networks for anti scraping
 serves a JS-only "block page" (?) after too many hits (?) in too short a time (?)
 it tries to grab the orientation and movement sensors(!)
+
+see:
+  https://support.f5.com/csp/article/K15405450
+  https://support.f5.com/kb/en-us/products/big-ip_asm/manuals/product/asm-implementations-11-5-0/4.html
+  https://rehmann.co/blog/scraping-by/
