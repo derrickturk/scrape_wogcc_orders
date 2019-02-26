@@ -1,0 +1,8 @@
+*.swo
+*.swp
+*.pdf
+*.ppm
+*.pbm
+*.html
+*.log
+__pycache__

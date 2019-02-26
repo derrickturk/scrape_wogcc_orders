@@ -1,0 +1,34 @@
+GET http://pipeline.wyo.gov/FindOrderYearKeyword.cfm
+ -> set cookies
+      CFID
+      CFTOKEN
+      TSxxx (for .pipeline.wyo.gov)
+      TSxxx
+
+POST http://pipeline.wyo.gov/findorderssYear.cfm
+  -> with cookies
+  -> with Referer
+  -> body (form / www-encoded)
+       oops: 1
+       WELLFL: <field>
+       cYear: <year>
+  -> set cookies
+       TSxxx (domain)
+       TSxxx
+
+GET order .../db/cardfile/xxx-yyyy.htm pages
+  -> with Referer
+  needs cookies?
+
+GET http://pipeline.wyo.gov/whatups/whatupapplications.cfm?cFile=xxx.pdf
+  -> with Referer
+  needs cookies?
+
+try:
+  nio 2018 (many pages)
+  nio 2008 (one page!)
+  nio 1975 (no records)
+
+they use F5 Networks for anti scraping
+serves a JS-only "block page" (?) after too many hits (?) in too short a time (?)
+it tries to grab the orientation and movement sensors(!)
