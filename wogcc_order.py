@@ -178,8 +178,13 @@ def order_card_record(content):
     hdr = [tr.td.strong.contents[0] for tr in rows]
     if hdr != EXPECTED_HEADER_COLUMN:
         raise ValueError('invalid cardfile page')
-    meta = [tr.find_all('td')[1].p.strong.contents[0].strip()
-            for tr in rows[:-1]]
+    meta = list()
+    for tr in rows[:-1]:
+        tds = tr.find_all('td')
+        if len(tds) < 2:
+            meta.append('')
+        else:
+            meta.append(tds[1].p.strong.contents[0].strip())
     pdfs = rows[-1].find_all('td')[1:]
     if len(pdfs) == 2:
         return OrderCard(*meta), pdfs[0].a['href'], pdfs[1].a['href']
